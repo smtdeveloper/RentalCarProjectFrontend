@@ -2,7 +2,7 @@
 
 export interface Rental{
     rentalId:number
-    brandName:string
+    brandName:string 
     firstName:string
     lastName:string
     rentDate:number

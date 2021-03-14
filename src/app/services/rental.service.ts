@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { RentalResponseModel } from '../models/rentalResponseModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class RentalService {
 
