@@ -1,0 +1,16 @@
+<h2 class="text-center" >Markalar (Brands)</h2>
+
+<table class="table "  style="background-color: #ffffffce;">
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>Model İsim</th>
+      </tr>
+
+  </thead>
+  <tr *ngFor='let brand of brand'>
+    <td>{{brand.brandId}}</td>
+    <td>{{brand.brandName}}</td>
+</tr>
+
+</table>

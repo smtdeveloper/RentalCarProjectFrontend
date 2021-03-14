@@ -1,0 +1,19 @@
+<h2 class="text-center" >Müşteriler (Customers)</h2>
+
+ <table  class="table" style="background-color: #ffffffce;">
+         <thead>
+             <tr>
+                 <th># Id</th>
+                 <th>#  Kullanıcı Id</th>
+                 <th>Müşteri ismi</th>
+                 
+             </tr>
+
+         </thead>
+         <tr *ngFor="let customer of customer"  >
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.userId}}</td>
+            <td>{{customer.customerName}}</td>
+        </tr>
+     
+ </table>
