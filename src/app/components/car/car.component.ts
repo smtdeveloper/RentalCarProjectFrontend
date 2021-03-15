@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
-
-import { carResponseModel } from 'src/app/models/carResponseModel';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -19,7 +17,7 @@ export class CarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCars();
-
+ 
   }
 
   getCars(){
