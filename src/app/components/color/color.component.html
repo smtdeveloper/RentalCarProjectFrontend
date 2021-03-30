@@ -1,16 +1,18 @@
 <h2 class="text-center" >Renkler (Colors)</h2>
 
-<table class="table "  style="background-color: #ffffffce;">
+<table class="table "  style="background-color: #ffffff9f;">
   <thead>
       <tr>
-          <th>#</th>
+        
           <th>Renk İsim</th>
       </tr>
 
   </thead>
-  <tr *ngFor ='let color of color' >
-     <td>{{color.colorId}}</td>
+  <tr (click)="setCurrentColor(color)" *ngFor ='let color of color' >
+    
      <td>{{color.colorName}}</td>
  </tr>
 
 </table>
+
+<h5 *ngIf="currentColor" > {{currentColor.colorName}} Seçtiniz :)  </h5>

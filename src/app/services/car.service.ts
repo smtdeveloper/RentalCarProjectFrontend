@@ -11,15 +11,23 @@ import { Car } from '../models/car';
 })
 export class CarService {
 
-  apiUrl = "https://localhost:44379/api/cars/getcardetail" 
+  apiUrl = "https://localhost:44379/api/" 
 
 
   constructor(private httpClient:HttpClient) { }
 
-
+//buradamı gelmiyordu evet markaya tıklayınca ilgili ıd gelmiyor service kısmında sanırsam yanlıs var sen hatayı al bakalım nereden tamnam
+//goole chrome da hatayı almamız lazım tamam hata Id nin null gelmesi tamam nasıl cözeceyiz bakalım tamam
   getCars():Observable<ListResponseModel<Car>>{
-   return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl); 
+    let newPath = this.apiUrl + "cars/getcardetail";
+   return this.httpClient.get<ListResponseModel<Car>>(newPath); 
+    }
+
+    getCarsByBrand(brandId:number):Observable<ListResponseModel<Car>>{
+      let newPath = this.apiUrl + "cars/getbybrand?brandId="+brandId
+      return this.httpClient.get<ListResponseModel<Car>>(newPath); 
+       }
     
-  }
 }
+
  

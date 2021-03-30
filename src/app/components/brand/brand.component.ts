@@ -11,8 +11,9 @@ export class BrandComponent implements OnInit {
 
 
   brand :Brand[] = [];
+  currentBrand : Brand;
   constructor(private brandService:brandService) { }
-
+ 
   ngOnInit(): void {
     this.getBrands();
   }
@@ -25,5 +26,26 @@ export class BrandComponent implements OnInit {
     } )
   }
 
+  setCurrentBrand(brand:Brand){
+
+    this.currentBrand = brand;
+  }
+
+  getCurrentBrandClass(brand:Brand){
+    if(brand == this.currentBrand){
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
+   }
+
+
+   getAllBrandClass(){
+    if(!this.currentBrand){
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
+   }
 
 }

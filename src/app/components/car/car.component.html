@@ -4,7 +4,7 @@
     <span class="visually-hidden">Loading...</span>
 </div> 
 
- <table *ngIf ="dataLoaded == true" class="table "  style="background-color: #ffffffce;">  
+ <table *ngIf ="dataLoaded == true" class="table "  style="background-color: #ffffff9f;">  
          <thead> 
              <tr>
                  <th>#</th>
@@ -12,11 +12,12 @@
                  <th>Marka</th>
                  <th>Renk</th>
                  <th>Model Yılı</th>
-                 <th>Fiyat</th>
-                 <th>Açıklama</th>
+                 <th>Günlük Fiyat</th>
+                 <th>Açıklama</th> 
              </tr>
 
          </thead>
+         
          <tr  *ngFor="let car of car">
             <td>{{car.carId}}</td>
             <td>{{car.name}}</td>

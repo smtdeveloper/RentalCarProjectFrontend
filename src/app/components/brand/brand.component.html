@@ -1,16 +1,24 @@
 <h2 class="text-center" >Markalar (Brands)</h2>
 
-<table class="table "  style="background-color: #ffffffce;">
+<table class="table "  style="background-color: #ffffff9f;">
+   
   <thead>
+    <h5 *ngIf="currentBrand" > {{currentBrand.brandName}} Seçtiniz :)  </h5>
       <tr>
-          <th>#</th>
-          <th>Model İsim</th>
+        
+        <th> <h3> Model </h3> </th>
       </tr>
 
   </thead>
-  <tr *ngFor='let brand of brand'>
-    <td>{{brand.brandId}}</td>
-    <td>{{brand.brandName}}</td>
+  <tr >
+     <td  routerLink = "/cars" [class]="getAllBrandClass()"> <h3> Tüm Modeller </h3>  </td>
+    <td  (click)="setCurrentBrand(brand)" 
+    routerLink = "/cars/brand/{{brand.brandId}}" 
+    *ngFor='let brand of brand' 
+      [class]="getCurrentBrandClass(brand)" > <h6> {{brand.brandName}} </h6> </td>
 </tr>
 
 </table>
+
+<!-- [class]="getAllBrandClass()" -->
+
