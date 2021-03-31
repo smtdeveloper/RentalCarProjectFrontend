@@ -3,7 +3,7 @@
 <table class="table "  style="background-color: #ffffff9f;">
    
   <thead>
-    <h5 *ngIf="currentBrand" > {{currentBrand.brandName}} Seçtiniz :)  </h5>
+  
       <tr>
         
         <th> <h3> Model </h3> </th>
@@ -11,14 +11,15 @@
 
   </thead>
   <tr >
-     <td  routerLink = "/cars" [class]="getAllBrandClass()"> <h3> Tüm Modeller </h3>  </td>
+     <td     (click)="clearCurrentBrand()"  routerLink = "/cars" [class]="getAllBrandClass()"> <h6> Tüm Modeller </h6>  </td>
+
     <td  (click)="setCurrentBrand(brand)" 
     routerLink = "/cars/brand/{{brand.brandId}}" 
     *ngFor='let brand of brand' 
-      [class]="getCurrentBrandClass(brand)" > <h6> {{brand.brandName}} </h6> </td>
+      [class]="getCurrentBrandClass(brand)" >  {{brand.brandName}}  </td>
 </tr>
 
 </table>
-
+<h6 *ngIf="currentBrand" > {{currentBrand.brandName}} Seçtiniz :)  </h6>
 <!-- [class]="getAllBrandClass()" -->
 
