@@ -1,4 +1,4 @@
-<h2 class="text-center" >Renkler (Colors)</h2>
+<h2 class="text-center" >  </h2>
 
 <table class="table "  style="background-color: #ffffff9f;">
    
@@ -6,12 +6,12 @@
     
       <tr>
         
-        <th> <h3> Renk </h3> </th>
+        <th> <h6> Renk </h6> </th>
       </tr>
 
   </thead>
   <tr >
-     <td    (click)="clearCurrentColor()"  routerLink = "/cars" [class]="getAllColorClass()"> <h6> Tüm Renkler </h6>  </td>
+     <td    (click)="clearCurrentColor()"  routerLink = "/cars" [class]="getAllColorClass()">  Tüm Renkler  </td>
     <td  (click)="setCurrentColor(color)" 
     routerLink = "/cars/color/{{color.colorId}}" 
     *ngFor='let color of color' 
@@ -19,6 +19,6 @@
 </tr>
 
 </table>
-<h6 *ngIf="currentColor" > {{currentColor.colorName}} Seçtiniz :)  </h6>
+<h6 *ngIf="currentColor"  class="alert alert-success" > {{currentColor.colorName}} Seçtiniz :)  </h6>
 
 <!-- [class]="getAllBrandClass()" -->

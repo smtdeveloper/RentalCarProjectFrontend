@@ -1,4 +1,4 @@
-<h2 class="text-center" >Markalar (Brands)</h2>
+<h2 class="text-center" > SMTcoder </h2>
 
 <table class="table "  style="background-color: #ffffff9f;">
    
@@ -6,20 +6,18 @@
   
       <tr>
         
-        <th> <h3> Model </h3> </th>
+        <th> <h6> Model </h6> </th>
       </tr>
 
   </thead>
   <tr >
-     <td     (click)="clearCurrentBrand()"  routerLink = "/cars" [class]="getAllBrandClass()"> <h6> Tüm Modeller </h6>  </td>
+     <td     (click)="clearCurrentBrand()"  routerLink = "/cars" [class]="getAllBrandClass()">  Tüm Modeller   </td>
 
-    <td  (click)="setCurrentBrand(brand)" 
-    routerLink = "/cars/brand/{{brand.brandId}}" 
-    *ngFor='let brand of brand' 
-      [class]="getCurrentBrandClass(brand)" >  {{brand.brandName}}  </td>
-</tr>
+    <td  (click)="setCurrentBrand(brand)" routerLink = "/cars/brand/{{brand.brandId}}" 
+    *ngFor='let brand of brand' [class]="getCurrentBrandClass(brand)" >  {{brand.brandName}}  </td>
+  </tr>
 
 </table>
-<h6 *ngIf="currentBrand" > {{currentBrand.brandName}} Seçtiniz :)  </h6>
+<h6 *ngIf="currentBrand"  class="alert alert-success" > {{currentBrand.brandName}} Seçtiniz :)  </h6>
 <!-- [class]="getAllBrandClass()" -->
 

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarImage } from 'src/app/models/carImage';
 import { CarService } from 'src/app/services/car.service';
+import { CarimageService } from 'src/app/services/carimage.service';
+//import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-car',
@@ -13,7 +17,21 @@ export class CarComponent implements OnInit {
   cars:Car[]=[];
   dataLoaded =false;
   
-  constructor(private carService:CarService,private activateRoute : ActivatedRoute) { }
+  apiUrl="https://localhost:44379/"
+
+  carImages : CarImage[] = [];
+  currentImage : CarImage;
+  
+  
+
+  constructor(
+
+    private carService:CarService ,
+    private activateRoute : ActivatedRoute ,
+    private carImageService : CarimageService ,
+   // private toastrService:ToastrService 
+
+    ) { }
 
   ngOnInit(): void {
    this.activateRoute.params.subscribe(params =>{
@@ -48,4 +66,31 @@ getCarsByColor(colorId : number){
   this.dataLoaded = true;
   })
 }
+
+
+
+getCarImages(carId:number){
+  this.carImageService.getCarImages(carId).subscribe((response)=>{
+    this.carImages = response.data;
+  })
+}
+
+getCurrentImageClass(image:CarImage){
+  if(image==this.carImages[0]){
+    return "carousel-item active"
+  } else {
+    return "carousel-item"
+  }
+}
+getButtonClass(image:CarImage){
+  if(image==this.carImages[0]){
+    return "active"
+  } else {
+    return ""
+  }
+}
+rentOnClick(){
+ // this.toastrService.info("Lütfen müşteri ve tarih seçin");
+}
+
 }

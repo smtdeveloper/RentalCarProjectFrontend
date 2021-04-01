@@ -8,25 +8,44 @@
     
          <thead> 
               <tr>
-                 <th>#</th>
+                 <th>#</th> 
+                 <th>image</th>
                  <th>Model İsim</th>
                  <th>Marka</th>
                  <th>Renk</th>
                  <th>Model Yılı</th>
                  <th>Günlük Fiyatı</th>
                  <th>Açıklama</th> 
+                 <th> image Tarih</th> 
+                 <th></th> 
              </tr>
 
          </thead>
-         
+         <tbody>  
          <tr  *ngFor="let car of cars">
-            <td>  {{car.carId}}  </td>
+          <td>  {{car.carId}}  </td> 
+          <td>
+            <img
+            src="{{ apiUrl + car.imagePath }}"
+              class="img-fluid"
+              width="250"
+              height="100"
+            />
+          </td>
             <td> <h6> {{car.name}} </h6> </td>
             <td> <h5> {{car.brandName}} </h5> </td>
             <td> <h5> {{car.colorName}} </h5> </td>
             <td> <h6> {{car.modelYear}} </h6> </td>
             <td> <h6> {{car.dailyPrice}} </h6> </td>
             <td> <h6> {{car.description}} </h6> </td>
+           
+            
+            <td> <h6> {{car.carImageDate}} </h6> </td>
+            <td><button class="btn btn-success">Detaylar</button></td>
         </tr>
-     
+    </tbody>
  </table>
+
+
+<!--   src="{{apiUrl + car.imagePath}}"   -->
+ 

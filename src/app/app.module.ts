@@ -12,7 +12,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { UserComponent } from './components/user/user.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
-import { from } from 'rxjs';
+import { CarimageComponent } from './components/carimage/carimage.component';
 
 
 
@@ -26,6 +26,7 @@ import { from } from 'rxjs';
     UserComponent,
     CustomerComponent,
     RentalComponent,
+    CarimageComponent,
 
 
   ],
