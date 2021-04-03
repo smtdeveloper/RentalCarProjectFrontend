@@ -21,7 +21,7 @@ export class CarComponent implements OnInit {
 
   carImages : CarImage[] = [];
   currentImage : CarImage;
-  
+  filterText="";
   
 
   constructor(

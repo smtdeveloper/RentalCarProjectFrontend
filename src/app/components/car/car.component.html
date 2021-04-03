@@ -3,40 +3,77 @@
 <div *ngIf ="dataLoaded == false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div> 
+
 <h2 style="background-color: #ffffff9f;" class="text-center" >Arabalar (Cars)</h2>
- <table *ngIf ="dataLoaded == true" class="table "  style="background-color: #ffffff;">  
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">  </label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="Araç Ara">
+</div>
+
+<div *ngIf="filterText.length>2"  class="alert alert-primary" > 
+ <h6 class="text-center" > {{ filterText }} aradınız :) </h6> 
+</div>
+
+<div class="card" style="width: 20rem;" *ngFor="let car of cars | filterPipe:filterText "> 
+  <img
+            src="{{apiUrl+car.imagePath}}" 
+              class="img-fluid card-img-top"
+              width="250"
+              height="100"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center"> SMTcoder </h5>
     
+   </div>
+   <ul>
+     <li> <h5> {{car.brandName}} </h5>  </li>
+     <li>  <h5> {{car.colorName}} </h5> </li>
+     <li> <h6> {{car.dailyPrice | currency }} </h6> </li>
+   </ul>
+   <h5 class="card-text text-primary text-center" >  {{car.description}}   </h5>
+   <div class="card-body">
+    <a href="" class="btn btn-primary ">Detaylar</a>
+   </div>
+</div>
+
+
+<!--   
+ <table *ngIf ="dataLoaded == true" class="table"  style="background-color: #ffffff;">  
+ 
          <thead> 
-              <tr>
+              <tr >
                  <th>#</th> 
-                 <th>image</th>
-                 <th>Model İsim</th>
-                 <th>Marka</th>
-                 <th>Renk</th>
-                 <th>Model Yılı</th>
-                 <th>Günlük Fiyatı</th>
-                 <th>Açıklama</th> 
-                 <th> image Tarih</th> 
+                 <th class="text-center" > Araç Resmi </th>
+                 <th class="text-center" >Model İsim</th>
+                 <th class="text-center" >Marka</th>
+                 <th class="text-center" >Renk</th>
+                 <th class="text-center" >Model Yılı</th>
+                 <th class="text-center" >Günlük Fiyatı</th>
+                 <th class="text-center" >Açıklama</th> 
+                 <th class="text-center" > image Tarih</th> 
                  <th></th> 
              </tr>
 
          </thead>
+
          <tbody>  
-         <tr  *ngFor="let car of cars">
+         <tr  *ngFor="let car of cars | filterPipe:filterText "  >
           <td>  {{car.carId}}  </td> 
           <td>
             <img
-            src="{{ apiUrl + car.imagePath }}"
+            src="{{apiUrl+car.imagePath}}" class="card-img-top"
               class="img-fluid"
               width="250"
               height="100"
             />
           </td>
-            <td> <h6> {{car.name}} </h6> </td>
+            <td> <h6> {{car.name | uppercase}} </h6> </td>
             <td> <h5> {{car.brandName}} </h5> </td>
             <td> <h5> {{car.colorName}} </h5> </td>
             <td> <h6> {{car.modelYear}} </h6> </td>
-            <td> <h6> {{car.dailyPrice}} </h6> </td>
+            <td> <h6> {{car.dailyPrice | currency }} </h6> </td>
             <td> <h6> {{car.description}} </h6> </td>
            
             
@@ -45,7 +82,34 @@
         </tr>
     </tbody>
  </table>
+ -->
+
+<!--   src="{{apiUrl + car.imagePath}}"  
 
 
-<!--   src="{{apiUrl + car.imagePath}}"   -->
+<img
+            src="{{apiUrl+car.imagePath}}" class="card-img-top"
+              class="img-fluid"
+              width="250"
+              height="100"
+            />
+
+-->
  
+<!--  
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Detaylar</a>
+  </div>
+</div>
+-->
