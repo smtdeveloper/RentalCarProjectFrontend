@@ -6,7 +6,7 @@
     
       <tr>
         
-        <th> <h6> Renk </h6> </th>
+        <th> <h3> Renk </h3> </th>
       </tr>
 
   </thead>
@@ -15,7 +15,7 @@
     <td  (click)="setCurrentColor(color)" 
     routerLink = "/cars/color/{{color.colorId}}" 
     *ngFor='let color of color' 
-      [class]="getCurrentColorClass(color)" >  {{color.colorName}}  </td>
+      [class]="getCurrentColorClass(color)" > <h5> {{color.colorName}}  </h5>   </td>
 </tr>
 
 </table>

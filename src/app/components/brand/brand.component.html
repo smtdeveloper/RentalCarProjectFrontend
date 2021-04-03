@@ -6,7 +6,7 @@
   
       <tr>
         
-        <th> <h6> Model </h6> </th>
+        <th> <h3> Model </h3> </th>
       </tr>
 
   </thead>
@@ -14,7 +14,7 @@
      <td     (click)="clearCurrentBrand()"  routerLink = "/cars" [class]="getAllBrandClass()">  Tüm Modeller   </td>
 
     <td  (click)="setCurrentBrand(brand)" routerLink = "/cars/brand/{{brand.brandId}}" 
-    *ngFor='let brand of brand' [class]="getCurrentBrandClass(brand)" >  {{brand.brandName}}  </td>
+    *ngFor='let brand of brand' [class]="getCurrentBrandClass(brand)" >  <h5> {{brand.brandName}}  </h5>  </td>
   </tr>
 
 </table>
