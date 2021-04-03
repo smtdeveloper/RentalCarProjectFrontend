@@ -1,1 +1,96 @@
-<p>car-detail works!</p>
+<br>
+<br>
+<h2 class="d-flex justify-content-center">CAR DETAILS</h2>
+<br>
+
+
+<div class="container" >
+    <div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel">
+      <div class="carousel-inner">
+      
+        <div *ngFor="let carImage of carImages"
+         [class]="getCurrentImageClass(carImage)">
+          <img src="{{apiUrl+carImage.imagePath}}" class="d-block w-80 center rounded mx-auto d-block" alt="ReCarimg">
+        </div>
+       </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+<div >  
+<table class="table table-hover table-dark container my-3 px-4 "  >
+    <thead>
+      <tr >
+        <th >#</th>
+        <th >Model ismi</th>
+        <th >Marka</th>
+        <th >Renk</th>
+        <th >Model Yılı</th>
+        <th >Günlük Fiyatı +KDV</th>
+        <th >Haftalık Fiyatı +KDV</th>
+        <th >Aylık Fiyatı +KDV</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carImage of carImages" >
+        <td>  <h3> {{car.carId}} </h3> </td>
+        <td> <h3> {{car.name}} </h3> </td>
+        <td> <h3> {{car.brandName}} </h3> </td>
+        <td> <h3> {{car.colorName}} </h3> </td>
+        <td> <h3> {{car.modelYear}} </h3> </td>
+        <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <button (click)="addRental(carImage)" type="button" class="btn btn-outline-warning btn-lg position-relative">  
+          <h2> Kirala </h2>  </button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <table class="table table-dark container"  >   
+
+    <thead> 
+        <tr >
+            <th  class="bg-primary" scope="col"> <h2> Açıklama </h2>  </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr  >
+            <th scope="row"> <h5 class="font-monospace mx-4 my-2" > <br>  {{car.description}}  <br><hr>
+                <h5 class="font-monospace" >  
+                    Haftalık kiralama'da 1 gün bizden  
+                    <br> 
+                    Aylık kiralama'da 3 gün bizden 
+                </h5>     
+            </h5>  </th>
+               
+        </tr>
+        <tr > 
+            <th  class="bg-primary" > <h2> Araba Kiralama  Şartları !</h2> </th>
+        </tr>
+        <tr> 
+            <th scope="row"> 
+                <h5 class="font-monospace  mx-4 my-2" >  
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quidem hic recusandae exercitationem, 
+               nemo dolorem reiciendis distinctio magnam expedita natus facilis consequatur perferendis ut tenetur, 
+               delectus illum, quia dolorum at?   </h5>   </th>
+        </tr>
+    </tbody>
+
+  </table>
+
+
+  

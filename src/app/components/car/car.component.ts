@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { CarService } from 'src/app/services/car.service';
@@ -29,7 +30,7 @@ export class CarComponent implements OnInit {
     private carService:CarService ,
     private activateRoute : ActivatedRoute ,
     private carImageService : CarimageService ,
-   // private toastrService:ToastrService 
+   
 
     ) { }
 
@@ -67,30 +68,5 @@ getCarsByColor(colorId : number){
   })
 }
 
-
-
-getCarImages(carId:number){
-  this.carImageService.getCarImages(carId).subscribe((response)=>{
-    this.carImages = response.data;
-  })
-}
-
-getCurrentImageClass(image:CarImage){
-  if(image==this.carImages[0]){
-    return "carousel-item active"
-  } else {
-    return "carousel-item"
-  }
-}
-getButtonClass(image:CarImage){
-  if(image==this.carImages[0]){
-    return "active"
-  } else {
-    return ""
-  }
-}
-rentOnClick(){
- // this.toastrService.info("Lütfen müşteri ve tarih seçin");
-}
 
 }

@@ -6,7 +6,7 @@
 <div col-md-6> 
 
 </div>
-<div class="col-3"> 
+<div class="col-11"> 
 <div class="mb-2">
   <label for="filterText" class="form-label">  </label>
   <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
@@ -17,9 +17,12 @@
  <h6 class="text-center" > {{ filterText }} aradınız :) </h6> 
 </div>
 
-<div class="row row-cols-6 row-cols-md-6 g-6 " >  
+<div class="row row-cols-6 row-cols-md-6 g-6  " >  
   
-<div class="card mb-6 col-md-6  mx-4 mt-5" style="width: 21rem;" *ngFor="let car of cars | filterPipe:filterText ">
+<div class="card border-primary    mb-3 mb-6 col-md-6  mx-4 mt-5" style="width: 21rem;" 
+
+*ngFor="let car of cars | filterPipe:filterText ">
+
   <h2 style="background-color: #ffffff9f;" class="text-center" >Kiralık Araç</h2> 
   <div >  
   <img
@@ -29,22 +32,26 @@
               height="200"
             />
             <div class="card-body">
-              <h5 class="card-title text-center text-danger"> SMTcoder </h5>
+              <h5 class="card-title text-center text-darkt"> SMTcoder </h5>
             </div>
    <ul>
      <li> <h5> Marka : {{car.brandName}} </h5>  </li>
      <li>  <h5> Renk : {{car.colorName}} </h5> </li>
-     <li> <h4>  {{car.dailyPrice | currency }} / Aylık </h4> </li>
+     <li> <h4>  {{car.dailyPrice | currency : "TRY":"" }} ₺ / Günlük </h4> </li>
    </ul>
 
    <h5 class="card-text text-primary text-center" >  {{car.description}}   </h5>
    <div class="card-footer">
-    <a href="#" class="btn btn-primary "> Detaylar </a>
-   </div>
+    <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-warning   mt-2 my-2">  <h3> Detaylar</h3>  </a>
+   
+</div>
 </div>
 </div>
 </div>
 <!--   
+
+  <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+
  <table *ngIf ="dataLoaded == true" class="table"  style="background-color: #ffffff;">  
  
          <thead> 
