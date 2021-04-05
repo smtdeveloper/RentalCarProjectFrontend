@@ -7,10 +7,11 @@
 
 </div>
 <div class="col-11"> 
-<div class="mb-2">
+<div class="mb-2"> <br>
   <label for="filterText" class="form-label">  </label>
+  <br>
   <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
-  placeholder="Araç Ara">
+  placeholder="  Araç Ara">
 </div>
 </div>
 <div *ngIf="filterText.length>2"  class="alert alert-primary" > 
@@ -19,7 +20,7 @@
 
 <div class="row row-cols-6 row-cols-md-6 g-6  " >  
   
-<div class="card border-primary    mb-3 mb-6 col-md-6  mx-4 mt-5" style="width: 21rem;" 
+<div class="card border-primary    mb-3 mb-6 col-md-6  mx-4 mt-5" style="width: 20rem;" 
 
 *ngFor="let car of cars | filterPipe:filterText ">
 

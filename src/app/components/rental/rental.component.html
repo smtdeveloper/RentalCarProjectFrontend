@@ -1,25 +1,159 @@
-<h2 class="text-center" >Kiralama (Rental) </h2>
 
- <table  class="table"  style="background-color: #ffffff9f;">
-         <thead>
-             <tr>
-                 <th>#</th>
-                 <th>Marka</th>
-                 <th>Müşteri ismi</th>
-                 <th>Müşteri  soy ismi</th>
-                 <th>Aldığı Tarih</th>
-                 <th>Teslim Tarihi</th>
-                 
-             </tr> 
+<br> <br>
+<button  routerLink = "/cars" type="button" class="btn btn-outline-danger"> <h5> Kapat </h5> </button> 
+<br> <br> 
 
-         </thead>
-         <tr *ngFor ="let rental of rental"  >
-            <td>{{rental.rentalId}}</td>
-            <td>{{rental.brandName}}</td>
-            <td>{{rental.firstName}}</td>
-            <td>{{rental.lastName}}</td>
-            <td>{{rental.rentDate}}</td>
-            <td>{{rental.returnDate}}</td>
-        </tr>
+<div class="container" >
+    <div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel">
+      <div class="carousel-inner">
+      
+        <div *ngFor="let carImage of carImages"
+         [class]="getCurrentImageClass(carImage)">
+          <img src="{{apiUrl+carImage.imagePath}}" class="d-block w-80 center rounded mx-auto d-block" alt="ReCarimg">
+        </div>
+       </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+
+  <div >  
+    <table class="table table-hover table-dark container my-3 px-4 "  >
+        <thead>
+          <tr >
+            <th >#</th>
+            <th >Model ismi</th>
+            <th >Marka</th>
+            <th >Renk</th>
+            <th >Model Yılı</th>
+            <th >Günlük Fiyatı +KDV</th>
+            <th >Haftalık Fiyatı +KDV</th>
+            <th >Aylık Fiyatı +KDV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  >
+            <td>  <h3> {{car.carId}} </h3> </td>
+            <td> <h3> {{car.name}} </h3> </td>
+            <td> <h3> {{car.brandName}} </h3> </td>
+            <td> <h3> {{car.colorName}} </h3> </td>
+            <td> <h3> {{car.modelYear}} </h3> </td>
+            <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
+            <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
+            <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+<br> <br> <br> <br> 
+
+<!--Grid row-->
+<div class="row">
+
+
+  <!--Grid column-->
+
+  <!--Grid column-->
+  <div class="col-md-6 mb-4">
+
+    <!--Card-->
+    <div class="card card-cascade narrower">
+
+      <!--Card image-->
+      <div class="view view-cascade gradient-card-header peach-gradient">
+        <h5 class="mb-0"> <h3 class="text-center"> Aracınızın Konumu  </h3>   </h5>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade text-center">
+
+        <!--Google map-->
+        <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2097.06126852881!2d29.981196241394997!3d39.42135267176133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c9480cbdbc81c5%3A0x9309aff99149485a!2sOtopark!5e0!3m2!1str!2str!4v1617626034524!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
+        </div>
+
+
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card-->
+
+  </div>
+  <!--Grid column-->
+
+</div>
+<!--Grid row-->
+
+<form>
+    <div class="mb-3 col-md-6">
+      <label for="exampleInputEmail1" class="form-label"> <h2 class="text-light"  > Alış Tarihi </h2> </label>
+      <div class="form-group">
+       
+        <input type="date" name="bday" max="3000-12-31" 
+               min="1000-01-01" class="form-control">
+       </div>
+       
      
- </table>
+    </div>
+    <div class="mb-3 col-md-6">
+      <label for="exampleInputPassword1" class="form-label text-light"><h2> Teslim Tarihi</h2></label>
+      <div class="form-group">
+       
+        <input type="date" name="bday" min="1000-01-01"
+               max="3000-12-31" class="form-control">
+       </div> <br>
+ <h2 class="form-label text-light" > Araçı Teslim etmek istediğiniz konumu seçin </h2>
+       <select class="form-control form-control-lg">
+        <option> Konum Seç </option>
+        <option> Kütahya / Hilton Otopark </option>
+        <option> Kütahya / YPARK Otopark</option>
+        <option> Kütahya / Sevgi Otopark </option>
+        <option> Eskişehir   / Espark Otopark </option>
+        <option> Eskişehir / Petkon Otopark</option>
+        <option> Eskişehir / Kentaş  Otopark </option>
+      </select>
+
+    </div>
+
+    
+
+    
+ <div>
+     
+       </div>
+       <br>
+       <div class="p-3 mb-2 bg-dark   text-light col-md-6">
+
+        <h3> Dikat ! </h3>
+
+        <hr>
+        <h5>   Google Play'den uygulamızı indirin ve  size gödericemiz kod ile <br> aracınızın kapılarını acabilirsiniz. <br> <br>
+             @SMTcoder  iyi seyirler diler. :)  <br><br>
+             <button type="button" class="btn btn-outline-success text-light  ">
+               <a class="text-light " style="text-decoration: none" target="_blank"  href="https://play.google.com/store/apps/developer?id=Samet+Akca">  Uygulamayı indir  </a>  </button>
+              </h5>
+            </div> 
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1"> <h4 class="text-light"  >  Okudum Anladım, uygulamayı indirdim. </h4> </label>  <br>
+              
+            </div>  
+<br>
+        <button type="button" class="btn btn-warning btn-lg">  <h4> Kirala </h4>  </button> <br> <br>
+        
+
+  </form>
+  <br> <br> <br> 

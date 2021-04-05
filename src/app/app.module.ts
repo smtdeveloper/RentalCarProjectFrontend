@@ -22,7 +22,8 @@ import { CarDetailComponent } from './components/car/car-detail/car-detail.compo
 import { VatWeekPipe } from './pipes/vat-week.pipe';
 import { VatMoonPipe } from './pipes/vat-moon.pipe';
 
-import {ToastrModule, ToastrService} from "ngx-toastr"
+import {ToastrModule, ToastrService} from "ngx-toastr";
+import { FooterComponent } from './components/footer/footer.component'
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {ToastrModule, ToastrService} from "ngx-toastr"
     CarDetailComponent,
     VatWeekPipe,
     VatMoonPipe,
+    FooterComponent,
 
 
   ],
@@ -51,7 +53,7 @@ import {ToastrModule, ToastrService} from "ngx-toastr"
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass:"toast-bottom-right"
+      positionClass:"toast-top-right"
     })
 
   ],

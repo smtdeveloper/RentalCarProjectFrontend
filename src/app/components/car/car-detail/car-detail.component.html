@@ -10,7 +10,7 @@
       
         <div *ngFor="let carImage of carImages"
          [class]="getCurrentImageClass(carImage)">
-          <img src="{{apiUrl+carImage.imagePath}}" class="d-block w-80 center rounded mx-auto d-block" alt="ReCarimg">
+          <img src="{{apiUrl+carImage.imagePath}}" class=" d-block w-100 center rounded mx-auto d-block" alt="ReCarimg">
         </div>
        </div>
 
@@ -51,8 +51,9 @@
         <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
         <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
         <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
-        <td> <button (click)="addRental(carImage)" type="button" class="btn btn-outline-warning btn-lg position-relative">  
-          <h2> Kirala </h2>  </button> </td>
+        <td> <button routerLink="/rentals/{{car.carId}}" (click)="addRental2(car.carId)" 
+          type="button" class="btn btn-outline-warning btn-lg position-relative">  
+          <h2>  Kirala </h2>  </button> </td>
       </tr>
     </tbody>
   </table>
@@ -64,8 +65,7 @@
     <thead> 
         <tr >
             <th  class="bg-primary" scope="col"> <h2> Açıklama </h2>  </th>
-           
-        </tr>
+          </tr>
     </thead>
     <tbody>
         <tr  >
@@ -79,18 +79,40 @@
                
         </tr>
         <tr > 
-            <th  class="bg-primary" > <h2> Araba Kiralama  Şartları !</h2> </th>
+            <th  class="bg-primary" > <h2> Kiralama Koşulları</h2> </th>
         </tr>
         <tr> 
             <th scope="row"> 
                 <h5 class="font-monospace  mx-4 my-2" >  
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quidem hic recusandae exercitationem, 
-               nemo dolorem reiciendis distinctio magnam expedita natus facilis consequatur perferendis ut tenetur, 
-               delectus illum, quia dolorum at?   </h5>   </th>
+                  Ekonomik araç filosundan herhangi bir araç kiralamak için minimum 21 yaşında olmak gerekir. <br> Eğer 21 yaşından küçükseniz, Genç Sürücü ücreti ödemeniz gerekmektedir.
+                  <br> En az 1 senedir ehliyet sahibi olmak,
+                   <br> 1 adet kredi kartına sahip olmak gerekir.   </h5>   </th>
         </tr>
+        <tr > 
+          <th  class="bg-primary" > <h2> Neden Bizi Tercih Etmelisiniz?</h2> </th>
+      </tr>
+
+      <tr> 
+        <th scope="row"> 
+            <h5 class="font-monospace  mx-4 my-2" >  
+              Kiralık araç filosunda her segmentte araç bulabileceğiniz SMTcoder ,aynı zamanda <br>
+               en geniş filoya sahip olan araç kiralama şirketidir. <br>
+              Her zaman eşsiz bir müşteri deneyimi sunmayı amaçlayan SMTcoder, <br>
+               filosunu Ekonomik, Konfor, Prestij, Premium, Lüks ve Van olarak <br> 
+                6 farklı araç grubu altında müşterilerine sunar.  </h5>   </th>
+    </tr>
+
     </tbody>
 
   </table>
 
 
   
+<!--  
+  
+  
+  <td> <button (click)="addRental(carImage)" type="button" class="btn btn-outline-warning btn-lg position-relative">  
+          <h2> Kirala </h2>  </button> </td> 
+        
+        getRental(car.carId)
+        -->
