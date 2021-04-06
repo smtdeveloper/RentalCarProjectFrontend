@@ -23,7 +23,8 @@ import { VatWeekPipe } from './pipes/vat-week.pipe';
 import { VatMoonPipe } from './pipes/vat-moon.pipe';
 
 import {ToastrModule, ToastrService} from "ngx-toastr";
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { PaymentComponent } from './components/payment/payment.component'
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { FooterComponent } from './components/footer/footer.component'
     VatWeekPipe,
     VatMoonPipe,
     FooterComponent,
+    PaymentComponent,
 
 
   ],

@@ -68,13 +68,13 @@ export class CarDetailComponent implements OnInit {
   }
 
   addRental(id:number){
-    this.toastrService.success(" Araba Kiralandı" , "  Başarılı" ) 
+    this.toastrService.info( "Kiralama sayfasına yönlendiriliyorsunuz " , "  SMTcoder" ) 
   }
 
   addRental2(id:number){
-    
+
+    this.toastrService.info("Kiralama Sayfasına Yönlendiriliyorsunuz" , "SMTcoder")
     this.router.navigate(["rentals/",id]);
-    console.log(["rentals/",id])
 }
 
 }

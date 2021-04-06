@@ -1,5 +1,6 @@
-<br>
-<br>
+<br> <br>
+<button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
+<br> <br> 
 <h2 class="d-flex justify-content-center">CAR DETAILS</h2>
 <br>
 
@@ -51,7 +52,7 @@
         <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
         <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
         <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
-        <td> <button routerLink="/rentals/{{car.carId}}" (click)="addRental2(car.carId)" 
+        <td> <button routerLink="/rentals/{{car.carId}}" (click)="addRental(car.carId)" 
           type="button" class="btn btn-outline-warning btn-lg position-relative">  
           <h2>  Kirala </h2>  </button> </td>
       </tr>

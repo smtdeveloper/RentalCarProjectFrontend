@@ -5,6 +5,7 @@ import { CarDetailComponent } from './components/car/car-detail/car-detail.compo
 import { CarComponent } from './components/car/car.component';
 import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { RentalComponent } from './components/rental/rental.component';
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path:"cars/color/:colorId", component:CarComponent},
   {path:"cars/detail/:carId",component:CarDetailComponent},
   {path:"rentals/:carId" ,component:RentalComponent},
+  {path:"payments/:carId" , component:PaymentComponent},
 
+  {path:"payment" , component:PaymentComponent},
   {path:"brands",component:BrandComponent},
   {path:"colors",component:ColorComponent},
   {path:"customers",component:CustomerComponent},
