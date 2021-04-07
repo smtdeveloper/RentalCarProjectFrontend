@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
-import { FormsModule } from "@angular/forms"
+import { FormsModule , ReactiveFormsModule } from "@angular/forms" 
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 
@@ -24,7 +24,8 @@ import { VatMoonPipe } from './pipes/vat-moon.pipe';
 
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import { FooterComponent } from './components/footer/footer.component';
-import { PaymentComponent } from './components/payment/payment.component'
+import { PaymentComponent } from './components/payment/payment.component';
+import { CarAddComponent } from './components/car-add/car-add.component'
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PaymentComponent } from './components/payment/payment.component'
     VatMoonPipe,
     FooterComponent,
     PaymentComponent,
+    CarAddComponent,
 
 
   ],
@@ -54,6 +56,7 @@ import { PaymentComponent } from './components/payment/payment.component'
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-top-right"
     })

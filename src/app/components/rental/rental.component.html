@@ -3,58 +3,6 @@
 <button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
 <br> <br> 
 
-<div class="container" >
-  <div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel">
-    <div class="carousel-inner">
-    
-      <div *ngFor="let carImage of carImages"
-       [class]="getCurrentImageClass(carImage)">
-        <img src="{{apiUrl+carImage.imagePath}}" class="d-block w-80 center rounded mx-auto d-block" alt="ReCarimg">
-      </div>
-     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-
-
-<div >  
-  <table class="table table-hover table-dark container my-3 px-4 "  >
-      <thead>
-        <tr >
-          <th >#</th>
-          <th >Model ismi</th>
-          <th >Marka</th>
-          <th >Renk</th>
-          <th >Model Yılı</th>
-          <th >Günlük Fiyatı +KDV</th>
-          <th >Haftalık Fiyatı +KDV</th>
-          <th >Aylık Fiyatı +KDV</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr  >
-          <td>  <h3> {{car.carId}} </h3> </td>
-          <td> <h3> {{car.name}} </h3> </td>
-          <td> <h3> {{car.brandName}} </h3> </td>
-          <td> <h3> {{car.colorName}} </h3> </td>
-          <td> <h3> {{car.modelYear}} </h3> </td>
-          <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
-          <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
-          <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
-          
-        </tr>
-      </tbody>
-    </table>
-  </div>
 <br> <br> 
 
 <!--Grid row-->
@@ -86,7 +34,7 @@
        
       </div>
       <!--/.Card content-->
-      <button  routerLink="/payment" type="button" class="btn btn-warning btn-lg">  <h4> Aracı Kirala </h4>  </button> <br> <br>
+      
     </div>
     <!--/.Card-->
 
@@ -106,7 +54,91 @@
         </div>
         </div> 
   <!--Grid column-->
+<br> <br>
+  <form action=" ">   
+    <div class="col-md-10" >  
+<div class="mb-3 col-md-12">
+  <H3 class="text-light text-center" > isim soyisim </H3>
+  <div class="input-group">
+   
+              <div class="input-group-prepend">
+           
+              </div>
+              <input type="text" placeholder="isim giriniz" class="form-control">
+              <input type="text"  placeholder="soy isim giriniz" class="form-control">
+            </div>
+          
+       
+       </div>
+     
+<!--  
+       <h2 class="form-label text-light text-center" > Araçı Teslim etmek istediğiniz Şube'yi seçin </h2>
+       <select class="form-control form-control-lg">
+        <option disabled selected > Konum Seç </option>
+        <option> Kütahya / Hilton Otopark </option>
+        <option> Kütahya / YPARK Otopark</option>
+        <option> Kütahya / Sevgi Otopark </option>
+        <option> Eskişehir   / Espark Otopark </option>
+        <option> Eskişehir / Petkon Otopark</option>
+        <option> Eskişehir / Kentaş  Otopark </option>
+      </select>
+   -->    
+      <br>
 
+       <div class="mb-3 col-md-12">
+        <H3 class="text-light text-center" > Tarih Girin <br> Alış Tarihi  / Teslim Tarihi</H3>
+        <div class="col-12"> 
+            <div class="input-group">
+              <div class="input-group-prepend">
+             
+              </div>
+
+              <input
+              class="form-control"
+              min="{{ getMinDate() }}"
+              value="{{ getMinDate() }}"
+              type="date"
+              [(ngModel)]="rentDate"
+             
+            /> 
+
+              <!--   <input
+              class="form-control"
+              min="{{ getMinDate() }}"
+              value="{{ getMinDate() }}"
+              type="date"
+              [(ngModel)]="rentDate"
+            />   -->
+
+            <input
+            class="form-control"
+            min="{{ getMinDate() }}"
+            value="{{ getMinDate() }}"
+            type="Date"
+            [(ngModel)]="returnDate"
+          />
+
+              <button  routerLink="/payment" type="button" class="btn btn-warning btn-lg">  <h4> Aracı Kirala </h4>  </button> <br> <br>
+            </div>
+          </div>
+        </div>
+      
+     <br>
+ 
+      <br> <br> <br>
+     
+    </div>
+
+<br> <br>
+
+     
+
+    
+    </form>
+    
+ <div>
+     
+       </div>
 
 <!--Grid row-->
 

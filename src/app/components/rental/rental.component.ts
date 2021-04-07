@@ -9,6 +9,7 @@ import { Customer } from 'src/app/models/customer';
 import { Rental } from 'src/app/models/rental';
 import { CarService } from 'src/app/services/car.service';
 import { CarimageService } from 'src/app/services/carimage.service';
+import { CustomerService } from 'src/app/services/customer.service';
 import { RentalService } from 'src/app/services/rental.service';
 
 @Component({ 
@@ -23,13 +24,17 @@ export class RentalComponent implements OnInit {
   carImages : CarImage[] = [];
   apiUrl="https://localhost:44379/"
   currentImage : CarImage;
+  rentDate:Date;
+  returnDate:Date;
 
 
   constructor(
     private rentalService:RentalService,
     private router: Router,
     private carService :CarService,
-    private carImageService:CarimageService
+    private carImageService:CarimageService,
+    private toastrService:ToastrService,
+    private customerService:CustomerService
     ) { }
 
 
@@ -67,4 +72,46 @@ export class RentalComponent implements OnInit {
     })
   }
 
+  getMinDate(){
+    var today  = new Date();
+   
+    today.setDate(today.getDate() );
+    return today.toISOString().slice(0,10)
+  }
+
+
+ 
+
 }
+
+/* 
+
+ getCustomers()
+  {
+    this.customerService.getCustomer().subscribe(response=>
+      {
+        this.customers=response.data
+      })
+  }
+
+ getMinDate(){
+    var today  = new Date();
+    //min="1980-01-01"
+    today.setDate(today.getDate() + 1);
+    return today.toISOString().slice(0,10)
+  }
+
+  addRentals()
+  {
+    let rental:Rental = 
+    {
+      rentDate :this.rentDate,
+      returnDate:this.returnDate,
+      carId:this.car.carId,
+      customerId: parseInt(this.customerId.toString())
+    }
+    this.route.navigate(['/payment/', JSON.stringify(rental)]);
+    this.toastrService.info("Ödeme sayfasına yönlendiriliyorsunuz...", "Ödeme İşlemleri");
+  }
+
+*/
