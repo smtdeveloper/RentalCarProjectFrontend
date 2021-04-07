@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Car } from '../models/car';
+import { ResponseModel } from '../models/ResponseModel';
 
 
 
@@ -43,6 +44,9 @@ export class CarService {
           return this.httpClient.get<ListResponseModel<Car>>(newPath);
         }
 
+        add(car:Car):Observable<ResponseModel>{
+          return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
+        }
        
 }
 
