@@ -12,9 +12,14 @@ export class PaymentService {
   apiUrl="https://localhost:44379/api";
   constructor(private httpClient:HttpClient) { }
 
-  pay(rental:Rental,amount:number){
-    let path = this.apiUrl + "rentals/paymentadd";
-    this.httpClient.post<ResponseModel>(path,{payment:{amount:amount},rental:rental});
-
+ 
+  creditPayment(rental:Rental,amount:number):Observable<ResponseModel>
+  {
+    let newPath=this.apiUrl+"/rentals/paymentadd";
+   // rental.returnDate= undefined;
+    return this.httpClient.post<ResponseModel>(newPath,{payment:{amount:amount},rental:rental})
   }
+
+
+
 }
