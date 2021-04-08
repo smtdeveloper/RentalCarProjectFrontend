@@ -3,14 +3,63 @@
 <button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
 <br> <br> 
 
-<br> <br>
- <br>
- 
+
+
+
+<!--Grid row-->
+<div class="row">
+
+
+    <!--Grid column-->
+  
+    <!--Grid column-->
+    <div class="col-md-5 mb-3">
+  
+      <!--Card-->
+      <div class="card card-cascade narrower">
+  
+        <!--Card image-->
+        <div class="view view-cascade gradient-card-header peach-gradient">
+          <h5 class="mb-0"> <h3 class="text-center"> Aracınızın Konumu  </h3>   </h5>
+        </div>
+        <!--/Card image-->
+  
+        <!--Card content-->
+        <div class="card-body card-body-cascade text-center">
+  
+          <!--Google map-->
+          <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2097.06126852881!2d29.981196241394997!3d39.42135267176133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c9480cbdbc81c5%3A0x9309aff99149485a!2sOtopark!5e0!3m2!1str!2str!4v1617626034524!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
+          </div>
+  
+        
+        </div>
+        <!--/.Card content-->
+        
+      </div>
+      <!--/.Card-->
+  
+    </div>
+    <div class="p-3 mb-2 bg-dark   text-light col-md-6">
+  
+      <h2 class="text-danger text-center" > Dikkat ! </h2>
+  
+      <hr>
+      <h4>   Google Play'den uygulamızı indirin ve  size gödericemiz kod ile <br> aracınızın kapılarını acabilirsiniz. <br> <br>
+           @SMTcoder  iyi seyirler diler. :)  <br><br>
+           <button type="button" class="btn btn-outline-success text-light btn-center  ">
+             <a class="text-light text-center " style="text-decoration: none" target="_blank"  href="https://play.google.com/store/apps/developer?id=Samet+Akca"> <h4> Uygulamayı indir </h4>    </a>  </button>
+            </h4>
+  
+            
+          </div>
+          </div>
+      
 <div class="content">
     <br> <br>
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header"><h5 class="title"> Kiralamak için Bilgileri doldurun</h5></div>
+            <div class="card-header"><h5 class="title"> <h3>  Kiralamak için Bilgileri doldurun </h3> </h5></div>
             <div class="card-body">
                 <form [formGroup]="rentalAddForm">
 

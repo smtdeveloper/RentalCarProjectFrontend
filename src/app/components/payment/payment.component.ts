@@ -33,7 +33,7 @@ export class PaymentComponent implements OnInit {
     private carService:CarService,
     private router:Router,
     private toastrService:ToastrService,
-    private paymentService:PaymentService,
+
     private formBuilder:FormBuilder
 
   ) { }
@@ -44,6 +44,7 @@ export class PaymentComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params=>
       {
+        this.createPaymentAddForm();
         
         if(params["rental"])
         {
@@ -52,10 +53,11 @@ export class PaymentComponent implements OnInit {
         this.getCarDetail();
         }
       })
+
   }
 
 
-  createRentalAddForm(){
+  createPaymentAddForm(){
     this.cardAddForm = this.formBuilder.group({
       cardOwnerName:["" ,Validators.required],
       cardNumber:["" ,Validators.required],

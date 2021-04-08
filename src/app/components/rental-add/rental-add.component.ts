@@ -40,8 +40,11 @@ export class RentalAddComponent implements OnInit {
     if(this.rentalAddForm.valid){
       let rentalModel = Object.assign({},this.rentalAddForm.value)
       this.rentalService.add(rentalModel).subscribe(response =>{
-        this.toastrService.success(response.message,"Başarılı")
+        
+        this.toastrService.success(response.message,"Başarılı Eklendi")
+        
         this.router.navigate(["payment"]);
+       
       },responseError=>{
         if(responseError.error.Errors.length>0){
           for (let i = 0; i <responseError.error.Errors.length; i++) {
