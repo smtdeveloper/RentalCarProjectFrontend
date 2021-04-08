@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +14,8 @@ import { PaymentService } from 'src/app/services/payment.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+
+
 
   car:Car;
   carDetails:Car[];
