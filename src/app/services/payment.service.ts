@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ListResponseModel } from '../models/listResponseModel';
 import { Rental } from '../models/rental';
 import { ResponseModel } from '../models/ResponseModel';
 
@@ -20,6 +21,14 @@ export class PaymentService {
     return this.httpClient.post<ResponseModel>(newPath,{payment:{amount:amount},rental:rental})
   }
 
+  getrentaldetailbycarId(rental:Rental):Observable<ListResponseModel<Rental>>{
+    let newPath = this.apiUrl + "/rentals/getrentaldetailbycarId?carId="+rental;
+    return this.httpClient.get<ListResponseModel<Rental>>(newPath);
+  }
+
+  add(rental:Rental):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"/cards/add",rental)
+  }
 
 
 }

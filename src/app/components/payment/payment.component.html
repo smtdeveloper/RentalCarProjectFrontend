@@ -74,9 +74,20 @@
                 <div class="card-header"><h5 class="title"> <h2> Banka Bilgilerinizi Eksiksiz doldurun </h2></h5></div>
                 <div class="card-body">
                     <form [formGroup]="cardAddForm">
+
+
+                      <div class="mb-3">
+                        <label for="customerId"><h3> Müsteri Numaranız</h3> </label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="customerId" 
+                            formControlName="customerId" class="form-control" 
+                            placeholder="Müsteri Numaranızı giriniz"/>
+                        </div>
+                    </div>
     
                         <div class="mb-3">
-                            <label for="carId"><h3> İSİM </h3> </label>
+                            <label for="cardOwnerName"><h3> İSİM </h3> </label>
                             <div class="form-group">
                                 <input type="text" 
                                 id="cardOwnerName" 
@@ -108,7 +119,7 @@
                        <div class="mb-3">
                         <label for="cardCvv"> <h3> C V V </h3> </label>
                         <div class="form-group">
-                            <input type="text" 
+                            <input type="number" 
                             id="cardCvv" 
                             formControlName="cardCvv" class="form-control" 
                             placeholder="Kartın arkasındaki 3 haneli rakam"/>

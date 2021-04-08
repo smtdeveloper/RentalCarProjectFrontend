@@ -27,13 +27,14 @@ export class PaymentComponent implements OnInit {
   amountPayment:number=0;
 
  cardAddForm : FormGroup
+
   constructor(
 
     private activatedRoute:ActivatedRoute,
     private carService:CarService,
     private router:Router,
     private toastrService:ToastrService,
-
+    private paymentService:PaymentService,
     private formBuilder:FormBuilder
 
   ) { }
@@ -50,6 +51,7 @@ export class PaymentComponent implements OnInit {
         {
           this.rental = JSON.parse(params['rental']);
         this.getRental();
+        this.getrentaldetailbycarId(this.rental);
         this.getCarDetail();
         }
       })
@@ -59,12 +61,31 @@ export class PaymentComponent implements OnInit {
 
   createPaymentAddForm(){
     this.cardAddForm = this.formBuilder.group({
+      customerId:["" ,Validators.required],
       cardOwnerName:["" ,Validators.required],
       cardNumber:["" ,Validators.required],
       cardExpirationDate:["" ,Validators.required],
       cardCvv:["" ,Validators.required]
      })
   }
+
+  creditPayment()
+  {
+    if(this.cardAddForm.valid ){
+      let PaymentModel = Object.assign({},this.cardAddForm.value)
+      this.paymentService.add(PaymentModel).subscribe(response =>{
+        
+        this.toastrService.success(response.message,"Başarılı Eklendi")
+        
+       
+      }
+      );
+    } 
+    else {
+      this.toastrService.error(' Eksik Bilgiler var', 'Dikkat');
+    }
+  }
+
 
  
 
@@ -102,13 +123,12 @@ export class PaymentComponent implements OnInit {
 
 
 
-  creditPayment()
-  {
-
-    this.toastrService.success( "İşlem Başarılı");
-   
-  }
-
-
-
+  
+  getrentaldetailbycarId(rental:Rental){
+    this.paymentService.getrentaldetailbycarId(rental).subscribe((response) => {
+      this.rental2 = response.data;
+      console.log(response.data)
+  });
 }
+}
+
