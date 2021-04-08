@@ -25,7 +25,8 @@ import { VatMoonPipe } from './pipes/vat-moon.pipe';
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import { FooterComponent } from './components/footer/footer.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { CarAddComponent } from './components/car-add/car-add.component'
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { RentalAddComponent } from './components/rental-add/rental-add.component'
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { CarAddComponent } from './components/car-add/car-add.component'
     FooterComponent,
     PaymentComponent,
     CarAddComponent,
+    RentalAddComponent,
 
 
   ],

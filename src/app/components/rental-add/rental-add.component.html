@@ -1,0 +1,68 @@
+
+<br> <br>
+<button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
+<br> <br> 
+
+<br> <br>
+ <br>
+ 
+<div class="content">
+    <br> <br>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header"><h5 class="title"> Kiralamak için Bilgileri doldurun</h5></div>
+            <div class="card-body">
+                <form [formGroup]="rentalAddForm">
+
+                    <div class="mb-3">
+                        <label for="carId">Araba Id</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="carId" 
+                            formControlName="carId" class="form-control" 
+                            placeholder="araba ıd ekle"/>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="customerId">customer ıdniz</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="customerId" 
+                            formControlName="customerId" class="form-control" 
+                            placeholder="customer ıd ekle"/>
+                        </div>
+                    </div>
+                   
+                    <div class="mb-3">
+                        <label for="rentDate">Alış Tarihi</label>
+                        <div class="form-group">
+                            <input type="date" 
+                            id="rentDate" 
+                            formControlName="rentDate" class="form-control" 
+                            placeholder="Alış Tarihi"/>
+                        </div>
+                    </div>
+
+                   <div class="mb-3">
+                    <label for="returnDate">Teslim Tarihi</label>
+                    <div class="form-group">
+                        <input type="date" 
+                        id="returnDate" 
+                        formControlName="returnDate" class="form-control" 
+                        placeholder="Teslim Tarihi"/>
+                    </div>
+                   </div>
+                </form>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-warning" (click)="add()"> Devam </button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+  
+  <br> <br> <br> 
