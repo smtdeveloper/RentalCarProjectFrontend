@@ -6,6 +6,7 @@
 
     <div class="card-body">
         <form [formGroup] = "carUpdateForm">
+
                 <div class="mb-3">
                     <label for = "description">Açıklama</label>
                     <div class="form-group">
@@ -13,12 +14,20 @@
                         formControlName = "description" value="{{car.description}}"/>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for = "brandName">Marka Adı</label>
+
+                 <div class="mb-3">
+                    <label for = "colorId">Color Id</label>
                     <div class="form-group">
-                        <select id="brandName" class="form-select" formControlName = "brandName">
-                            <option [ngValue]="brand.brandId" *ngFor = "let brand of brands">{{brand.brandName}}</option>
-                        </select>
+                        <input type="number" id="colorId" class="form-control" 
+                        formControlName = "colorId" value="{{car.colorId}}"/>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for = "brandId">Brand Id</label>
+                    <div class="form-group">
+                        <input type="number" id="brandId" class="form-control" 
+                        formControlName = "brandId" value="{{car.brandId}}"/>
                     </div>
                 </div>
                 
@@ -44,15 +53,7 @@
                         formControlName = "dailyPrice" value="{{car.dailyPrice}}">
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="colorName">Renk Adı</label>
-                    <div class="form-group">
-                        <select id="colorName" type="number" class="form-select" formControlName="colorName">
-                            <option [ngValue] = "color.colorId" *ngFor="let color of colors">{{color.colorName}}</option>
-                        </select>                 
-                    </div>
-
-            </div>
+               
             <div class="mb-3">
                 <div class="form-group">
                

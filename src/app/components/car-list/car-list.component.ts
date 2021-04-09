@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -10,7 +11,10 @@ import { CarService } from 'src/app/services/car.service';
 export class CarListComponent implements OnInit {
 
   cars : Car[] = [];
-  constructor(private carService : CarService) { }
+  constructor(
+    private carService : CarService,
+    private toastrService:ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.getCars();
@@ -18,11 +22,13 @@ export class CarListComponent implements OnInit {
   getCars(){
     this.carService.getCars().subscribe((response)=>{
       this.cars = response.data
+      this.toastrService.success("Başarılı listelendi")
     });
   }
-  
+
   deleteCar(car : Car){
     this.carService.delete(car).subscribe();
+     this.toastrService.success("Silindi", "Başarılı :)")
   }
 
 }

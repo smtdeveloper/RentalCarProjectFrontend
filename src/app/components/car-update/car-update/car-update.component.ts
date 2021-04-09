@@ -8,6 +8,7 @@ import { Color } from 'src/app/models/color';
 import { brandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
 import { ColorService } from 'src/app/services/color.service';
+import { CarDetailComponent } from '../../car/car-detail/car-detail.component';
 
 @Component({
   selector: 'app-car-update',
@@ -44,16 +45,18 @@ export class CarUpdateComponent implements OnInit {
   createCarUpdateForm(){
     this.carUpdateForm = this.formBuilder.group({
       description : ["",Validators.required],
-      brandName : ["",Validators.required],
+      colorId: ["",Validators.required],
+      brandId : ["",Validators.required],
+      modelName: ["",Validators.required],
       modelYear : ["",Validators.required],
-      dailyPrice : ["",Validators.required],
-      colorName: ["",Validators.required],
-      modelName: ["",Validators.required]
+      dailyPrice : ["",Validators.required]
+     
+     
     })
   }
   getCarById(carId:number){
     this.carService.getCarDetailsByCarId(carId).subscribe(response =>{
-      this.car = response.data[0];
+     this.car = response.data[0];
     })
   }
 
