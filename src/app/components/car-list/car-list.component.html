@@ -1,0 +1,36 @@
+<br>  <br> 
+<button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
+<br> 
+<h1 class="text-center text-light">Araba Listesi </h1> 
+
+
+<br><br> 
+<table class="table table-bordered table-condensed table-hover " style="background-color: rgb(255, 255, 255);">
+    <thead class="thead-warning">
+        <tr>
+            
+            <th> <h3> Marka Adı </h3> </th>
+            <th> <h3> Model ismi </h3> </th>
+            <th> <h3> Renk Adı </h3> </th>
+            <th> <h3> Model Yılı</h3> </th>
+            <th> <h3>  Günlük Fiyat</h3> </th>
+            <th> <h3> Açıklama </h3>   </th>
+            <th> <h2> Güncelle / sil </h2> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let car of cars">
+           <td>{{car.brandName}}</td>
+           <td>{{car.modelName}}</td>
+           <td>{{car.colorName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>{{car.description}}</td>
+            <td class="operations">
+                <button class="btn btn-outline-success" routerLink="/cars/update/{{car.carId}}">Güncelle</button>
+                <button class="btn btn-outline-danger" (click)="deleteCar(car)">Sil</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

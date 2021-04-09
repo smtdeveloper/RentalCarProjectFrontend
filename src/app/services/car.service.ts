@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Car } from '../models/car';
 import { ResponseModel } from '../models/ResponseModel';
+import { ItemResponseModel } from '../models/itemResponseModel';
 
 
 
@@ -48,6 +49,15 @@ export class CarService {
           return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
         }
        
+        update(car:Car):Observable<ListResponseModel<Car>>{
+          let newPath = this.apiUrl + "cars/update";
+          return this.httpClient.post<ListResponseModel<Car>>(newPath,car);
+        }
+
+        delete(car:Car):Observable<ItemResponseModel<Car>>{
+          let newPath = this.apiUrl + "cars/delete";
+          return this.httpClient.post<ItemResponseModel<Car>>(newPath,car);
+        }
 }
 
  
