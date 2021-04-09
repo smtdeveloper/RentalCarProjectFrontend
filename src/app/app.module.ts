@@ -26,7 +26,9 @@ import {ToastrModule, ToastrService} from "ngx-toastr";
 import { FooterComponent } from './components/footer/footer.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
-import { RentalAddComponent } from './components/rental-add/rental-add.component'
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component'
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { RentalAddComponent } from './components/rental-add/rental-add.component
     PaymentComponent,
     CarAddComponent,
     RentalAddComponent,
+    LoginComponent,
+    RegisterComponent,
 
 
   ],

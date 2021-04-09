@@ -45,7 +45,7 @@ export class RentalAddComponent implements OnInit {
         
         this.toastrService.success(response.message,"Başarılı Eklendi")
         
-      
+        this.router.navigate(["payment"]);
        
       },responseError=>{
         if(responseError.error.Errors.length>0){

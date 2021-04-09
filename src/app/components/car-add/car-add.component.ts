@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, FormControl, Validators} from "@angular/forms"
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from 'src/app/services/car.service';
 
@@ -15,7 +16,8 @@ export class CarAddComponent implements OnInit {
   constructor( 
     private formBuilder:FormBuilder,
     private carServive:CarService,
-    private toastrService:ToastrService
+    private toastrService:ToastrService,
+    private router:Router
      ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class CarAddComponent implements OnInit {
       let carModel = Object.assign({},this.carAddForm.value)
       this.carServive.add(carModel).subscribe(response =>{
         this.toastrService.success(response.message,"Başarılı")
+       this.router
       },responseError=>{
         if(responseError.error.Errors.length>0){
           for (let i = 0; i <responseError.error.Errors.length; i++) {

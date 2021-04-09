@@ -6,7 +6,9 @@ import { CarDetailComponent } from './components/car/car-detail/car-detail.compo
 import { CarComponent } from './components/car/car.component';
 import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
 import { RentalComponent } from './components/rental/rental.component';
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:"rentals/:carId" ,component:RentalAddComponent},
   {path:"payments/:carId" , component:PaymentComponent},
 
+  {path:"login" , component:LoginComponent},
+  {path:"register" , component:RegisterComponent},
   {path:"rentals/add" , component:RentalAddComponent},
   {path:"cars/add" , component:CarAddComponent},
   {path:"payment" , component:PaymentComponent},

@@ -1,0 +1,62 @@
+
+<br> <br> <br> <br>  <br> <br>
+
+<div class="row">
+
+    <div class="col-md-6 mx-auto p-4">
+        <div class="card">
+            <div class="login-box">
+
+                <form [formGroup]="loginForm" >  
+                <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                    <label for="tab-1" class="tab">Giris Yap</label> 
+                     <input id="tab-2" type="radio" name="tab" class="sign-up">
+                     <label for="tab-2" class="tab text-info">Kayıt Ol</label>
+                    <div class="login-space">
+                        <div class="login">
+                            <div class="group">
+                                 <label for="floatingInput" class="label"> <h3> Emaİl </h3> </label>
+                                  <input formControlName="email" id="floatingInput" type="text" class="input" placeholder="Email giriniz"> </div>
+                            <div class="group"> 
+                                <label for="floatingPassword" class="label"> <h3> Parola </h3> </label> 
+                                <input formControlName="password" id="floatingPassword" type="password" class="input" data-type="password" placeholder="Şifrenizi girin"> </div>
+                            <div class="group"> 
+                                <input id="check" type="checkbox" class="check" checked>
+                                 <label for="check"><span class="icon"></span>   Oturumumu açık tut </label> </div>
+                            <button (click)="login()" class="w-100 btn btn-lg btn-primary" >
+                                Giriş yap
+                              </button>
+
+                            <div class="hr"></div>
+                            <div class="foot"> <a href="#"> <h4 class="text-warning" > Parolanızı mı unuttunuz ? </h4> </a> </div>
+                        </div>
+
+
+
+
+                        <div class="sign-up-form">
+                            <div class="group">
+                                 <label for="user" class="label text-center"> <h3> İsİm </h3> </label> 
+                                 <input id="user" type="text" class="input" placeholder="isminizi giriniz"> </div>
+                            <div class="group">
+                                 <label for="pass" class="label text-center"> <h3> Soy İsİm </h3> </label> 
+                                 <input id="pass" type="text" class="input" data-type="text" placeholder=" soy isminizi giriniz "> </div>
+                            <div class="group"> 
+                                <label for="pass" class="label text-center"> <h3> Emaİl </h3>  </label>
+                                 <input id="pass" type="email" class="input" data-type="email" placeholder="email giriniz"> </div>
+                            <div class="group"> 
+                                <label for="pass" class="label text-center"> <h3> Parola </h3></label> 
+                                <input id="pass" type="password" class="input" placeholder="Parola giriniz"> </div>
+                            <button class="w-100 btn btn-lg btn-primary" >
+                               Kayıt Ol
+                              </button>
+                            <div class="hr"></div>
+                            <div class="foot"> <a href="#"> <h4 class="tp-3 mb-3 p-2 mx-5 bg-warning text-dart" > Zaten üyeyim !     </h4> </a> </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
