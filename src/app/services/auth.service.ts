@@ -18,7 +18,7 @@ export class AuthService {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"login",loginModel)
   }
 
-  register(registerModel:RegisterComponent){
+  register(registerModel:LoginComponent){
 
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"register",registerModel)
   }
