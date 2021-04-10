@@ -32,6 +32,9 @@ import { RegisterComponent } from './components/register/register.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CarUpdateComponent } from './components/car-update/car-update/car-update.component';
 import { CarListComponent } from './components/car-list/car-list.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
+import { ColorListComponent } from './components/color/color-list/color-list.component';
+import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 
 
 @NgModule({
@@ -58,6 +61,9 @@ import { CarListComponent } from './components/car-list/car-list.component';
     RegisterComponent,
     CarUpdateComponent,
     CarListComponent,
+    ColorAddComponent,
+    ColorListComponent,
+    ColorUpdateComponent,
 
 
   ],

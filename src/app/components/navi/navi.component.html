@@ -12,6 +12,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #000000;">
     <div class="container-fluid ">
      
+      <button   routerLink="/login"  class="btn btn-lg btn-success" type="button"> <h4> Giriş Yap </h4>   </button> 
+
       <a class="navbar-brand mx-5 " href="#">
       
         <h5 class="text-center">  @SMTcoder  </h5> 
@@ -37,7 +39,7 @@
               <li><a class="dropdown-item" href="#">Arazi Araçlar </a></li>
               <li><a class="dropdown-item" href="#">Orta Sekment Araçlar </a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Motorlar</a></li>    
+              <li><a class="dropdown-item" href="#">Kiraladığım Araçlar</a></li>    
             </ul>
           </li>
        
@@ -50,14 +52,43 @@
        
 
         <form class="d-flex">
-          <button   routerLink="/login"  class="btn btn-outline-success" type="button"> <h5> Giriş Yap </h5>   </button> 
-         <li> </li>
+         
+      
          <!--  <button  routerLink="/register"  class="btn btn-sm btn-outline-primary" type="button">  <h5> Kayıt Ol </h5>  </button> -->
-          <li> </li>
-          <button  routerLink="/cars/add"  class="btn btn-outline-warning" type="button"> <h5> Araç  Ekle </h5>   </button> 
-          <li> </li>
-          <button  routerLink="/cars/list"  class="btn btn-outline-danger" type="button"> <h5> Araç  Güncelle / Sil  </h5>   </button> 
-          <li> </li>
+       
+          
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              <button  routerLink="/cars/add"  class="btn btn-warning" type="button"> <h4>  Ekle  </h4>   </button> 
+            </a>
+            <ul class="dropdown-menu" style="background-color: black;" aria-labelledby="navbarDropdown">
+              <button  routerLink="/cars/add"  class="btn btn-outline-warning" type="button"> <h5> Araç  Ekle </h5>   </button> 
+             
+              <button  routerLink="/colors/add"  class="btn btn-outline-warning" type="button"> <h5> Renk  Ekle </h5>   </button>
+              <button  routerLink="/colors/add"  class="btn btn-outline-warning" type="button"> <h5> Marka  Ekle </h5>   </button> 
+         
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">@SMTcoder</a></li>    
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              <button  routerLink="/cars/list"  class="btn btn-danger" type="button"> <h4>  Güncelle  /  Sil   </h4>   </button> 
+            </a>
+            <ul class="dropdown-menu" style="background-color: black;" aria-labelledby="navbarDropdown">
+              <button  routerLink="/cars/list"  class="btn btn-outline-danger" type="button"> <h5> Araç   Güncelle / Sil  </h5>   </button> 
+            
+              <button  routerLink="/colors/list"  class="btn btn-outline-danger" type="button"> <h5> Renk   Güncelle / Sil  </h5>   </button> 
+              <button  routerLink="/cars/list"  class="btn btn-outline-danger" type="button"> <h5>  Marka  Güncelle / Sil  </h5>   </button> 
+         
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">@SMTcoder</a></li>    
+            </ul>
+          </li>
+        
         </form>
       </div>
       </div>

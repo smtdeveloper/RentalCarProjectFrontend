@@ -6,6 +6,9 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car-update/car-update/car-update.component';
 import { CarDetailComponent } from './components/car/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
+import { ColorListComponent } from './components/color/color-list/color-list.component';
+import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { LoginComponent } from './components/login/login.component';
@@ -25,10 +28,17 @@ const routes: Routes = [
   {path:"rentals/:carId" ,component:RentalAddComponent},
   {path:"payments/:carId" , component:PaymentComponent},
   {path:"rentals/add" , component:RentalAddComponent},
+
   {path:"cars/add" , component:CarAddComponent , canActivate:[LoginGuard]},
   {path:"cars/update" , component:CarUpdateComponent, canActivate:[LoginGuard] },
   {path:"cars/update/:carId" , component:CarUpdateComponent, canActivate:[LoginGuard]},
-  {path:"cars/list" , component:CarListComponent},
+  {path:"cars/list" , component:CarListComponent, canActivate:[LoginGuard]},
+
+  {path:"colors/add" , component:ColorAddComponent , canActivate:[LoginGuard]},
+  {path:"colors/update" , component:ColorUpdateComponent, canActivate:[LoginGuard] },
+  {path:"colors/update/:colorId" , component:ColorUpdateComponent, canActivate:[LoginGuard]},
+  {path:"colors/list" , component:ColorListComponent, canActivate:[LoginGuard]},
+
 
   {path:"login" , component:LoginComponent},
   {path:"register" , component:RegisterComponent},

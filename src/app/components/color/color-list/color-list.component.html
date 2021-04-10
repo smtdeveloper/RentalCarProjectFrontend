@@ -1,0 +1,32 @@
+
+<br> <br> 
+<button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
+<br> 
+<br> <br><br>
+
+
+<h1 class="text-center text-light">Renk Listesi Listesi </h1> 
+
+<br> <br>
+
+<table class="table table-bordered table-condensed table-hover " style="background-color: rgb(255, 255, 255);">
+    <thead class="thead-dark">
+        <tr>  
+        <th>  <h2 class="text-center text-primary" > Renkler </h2>  </th>    
+        <th>  <h2  class="text-center text-success" > Güncelle </h2>  </th>    
+        <th>  <h2  class="text-center text-danger" > Sil </h2>  </th>   
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let color of colors">
+            <td> <h3> {{color.colorName}} </h3> </td>
+            <td class="operations">
+                <button class="btn btn-success" routerLink="/colors/update/{{color.colorId}}">Güncelle</button>
+              
+            </td>
+            <td> 
+                <button class="btn btn-danger" (click)="deleteColor(color)">Sil</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -15,20 +15,24 @@
             <th> <h3> Model Yılı</h3> </th>
             <th> <h3>  Günlük Fiyat</h3> </th>
             <th> <h3> Açıklama </h3>   </th>
-            <th> <h2> Güncelle / sil </h2> </th>
+            <th> <h2> Güncelle  </h2> </th>
+            <th> <h2> Sil  </h2> </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let car of cars">
-           <td>{{car.brandName}}</td>
-           <td>{{car.modelName}}</td>
-           <td>{{car.colorName}}</td>
-            <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice}}</td>
-            <td>{{car.description}}</td>
+           <td> <h4>  {{car.brandName}} </h4></td>
+           <td> <h4>  {{car.modelName}} </h4></td>
+           <td> <h4> {{car.colorName}} </h4> </td>
+            <td> <h4>   {{car.modelYear}} </h4></td>
+            <td> <h4>  {{car.dailyPrice}} </h4> </td>
+            <td> <h4> {{car.description}} </h4> </td>
             <td class="operations">
-                <button class="btn btn-outline-success" routerLink="/cars/update/{{car.carId}}">Güncelle</button>
-                <button class="btn btn-outline-danger" (click)="deleteCar(car)">Sil</button>
+                <button class="btn btn-success" routerLink="/cars/update/{{car.carId}}">Güncelle</button>
+               
+            </td>
+            <td> 
+                <button class="btn btn-danger" (click)="deleteCar(car)">Sil</button>
             </td>
         </tr>
 
