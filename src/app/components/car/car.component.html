@@ -1,10 +1,21 @@
 
+<div class="row" > 
 
+<div class="col-md-2">
+  <app-filter></app-filter>
+   <app-brand></app-brand>
+     <app-color></app-color> 
+ </div>
+ 
+ <div class="col-md-10" > 
 <div *ngIf ="dataLoaded == false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div> 
 <div col-md-6> 
 
+  
+ 
+  
 </div>
 <div class="col-11"> 
 <div class="mb-2"> <br>
@@ -44,7 +55,8 @@
    <h5 class="card-text text-primary text-center" >  {{car.description}}   </h5>
    <div class="card-footer">
     <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-warning   mt-2 my-2">  <h3> Detaylar</h3>  </a>
-   
+  </div>
+</div>
 </div>
 </div>
 </div>

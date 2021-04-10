@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       email:["", Validators.required],
       password:["", Validators.required]
 
+
+
     })
   }
 
@@ -46,6 +48,24 @@ export class LoginComponent implements OnInit {
         this.toastrService.error(responseError.error)
       })
     }
+  }
+
+  register(){
+
+    if(this.loginForm.valid){
+      console.log(this.loginForm.value);
+      let loginModel = Object.assign({},this.loginForm.value)
+
+      this.authService.register(loginModel).subscribe(response=>{
+        console.log(response)
+        this.toastrService.success(response.message,"Başarılı Kayıt")
+        localStorage.setItem("token",response.data.token)
+      },responseError=>{
+        //console.log(responseError)
+        this.toastrService.error(responseError.error)
+      })
+    }
+
   }
 
 }

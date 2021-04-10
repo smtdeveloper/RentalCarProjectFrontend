@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
+import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
+import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarListComponent } from './components/car-list/car-list.component';
@@ -39,6 +42,10 @@ const routes: Routes = [
   {path:"colors/update/:colorId" , component:ColorUpdateComponent, canActivate:[LoginGuard]},
   {path:"colors/list" , component:ColorListComponent, canActivate:[LoginGuard]},
 
+  {path:"brands/add" , component:BrandAddComponent , canActivate:[LoginGuard]},
+  {path:"brands/update" , component:BrandUpdateComponent, canActivate:[LoginGuard] },
+  {path:"brands/update/:colorId" , component:BrandUpdateComponent, canActivate:[LoginGuard]},
+  {path:"brands/list" , component:BrandListComponent, canActivate:[LoginGuard]},
 
   {path:"login" , component:LoginComponent},
   {path:"register" , component:RegisterComponent},
@@ -46,7 +53,11 @@ const routes: Routes = [
   {path:"brands",component:BrandComponent},
   {path:"colors",component:ColorComponent},
   {path:"customers",component:CustomerComponent},
-  {path:"rentals",component:RentalComponent}
+  {path:"rentals",component:RentalComponent},
+  
+  {path:"cars/filter/:brandId/:colorId",component:CarComponent}
+
+
 ];
 
 @NgModule({

@@ -22,12 +22,12 @@ export class ColorListComponent implements OnInit {
   getColors(){
     this.colorService.getColors().subscribe((response) =>{
       this.colors  = response.data
-      this.toastrService.success("Başarılı listelendi")
+      this.toastrService.success("Renkler Başarılı listelendi")
     })
   }
   deleteColor(color : Color){
     this.colorService.delete(color).subscribe();
-    this.toastrService.success("Başarılı silindi :)")
+    this.toastrService.success("Renk Başarılı silindi :)")
   }
 
 }

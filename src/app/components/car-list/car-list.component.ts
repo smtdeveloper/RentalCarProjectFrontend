@@ -22,13 +22,13 @@ export class CarListComponent implements OnInit {
   getCars(){
     this.carService.getCars().subscribe((response)=>{
       this.cars = response.data
-      this.toastrService.success("Başarılı listelendi")
+      this.toastrService.success("Arabalar Başarılı listelendi")
     });
   }
 
   deleteCar(car : Car){
     this.carService.delete(car).subscribe();
-     this.toastrService.success("Silindi", "Başarılı :)")
+     this.toastrService.success("Araba Silindi", "Başarılı :)")
   }
 
 }

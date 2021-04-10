@@ -1,5 +1,8 @@
 
-<br> <br> <br> <br>  <br> <br>
+<br> <br>
+<button   routerLink = "/cars" type="button" class="btn btn-outline-danger "> <h5> Kapat </h5> </button> 
+<br> <br> 
+
 
 <div class="row">
 
@@ -8,6 +11,7 @@
             <div class="login-box">
 
                 <form [formGroup]="loginForm" >  
+
                 <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
                     <label for="tab-1" class="tab">Giris Yap</label> 
                      <input id="tab-2" type="radio" name="tab" class="sign-up">
@@ -47,7 +51,7 @@
                             <div class="group"> 
                                 <label for="pass" class="label text-center"> <h3> Parola </h3></label> 
                                 <input id="pass" type="password" class="input" placeholder="Parola giriniz"> </div>
-                            <button class="w-100 btn btn-lg btn-primary" >
+                            <button (click)="register()" class="w-100 btn btn-lg btn-primary"  >
                                Kayıt Ol
                               </button>
                             <div class="hr"></div>
