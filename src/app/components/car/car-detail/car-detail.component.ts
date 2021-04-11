@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
+import { User } from 'src/app/models/user';
 import { CarService } from 'src/app/services/car.service';
 import { CarimageService } from 'src/app/services/carimage.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -22,18 +24,19 @@ export class CarDetailComponent implements OnInit {
   
   
 
-
+user:User
 
   constructor(  
     private carService: CarService,
     private carImageService : CarimageService,
     private activatedRoute :ActivatedRoute,
     private toastrService:ToastrService,
-    private router:Router
+    private router:Router,
+    private userService:UserService
     ) { }
 
   ngOnInit(): void {
-
+    this.getUserByEmail();
     this.activatedRoute.params.subscribe(params=>{
       if(params["carId"]){
         this.getCarDetailsByCarId(params["carId"]);
@@ -42,7 +45,9 @@ export class CarDetailComponent implements OnInit {
     })
    
   }
-
+  getUserByEmail(){
+    this.userService.getByMail(localStorage.getItem("email")).subscribe((response)=>{this.user=response.data})
+  }
   getCarDetailsByCarId(carId: number) {
     this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
       this.car = response.data[0];

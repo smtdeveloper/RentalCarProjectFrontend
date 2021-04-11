@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import {  FormGroup , FormBuilder , Validators, FormControl  } from "@angular/forms";
 import { Router } from '@angular/router';
@@ -43,7 +44,10 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe(response=>{
         console.log(response)
         this.toastrService.success(response.message,"Başarılı giriş")
+        this.router.navigate(["cars"])
         localStorage.setItem("token",response.data.token)
+        localStorage.setItem("email",loginModel.email)
+
       },responseError=>{
         console.log(responseError)
         this.toastrService.error(responseError.error)

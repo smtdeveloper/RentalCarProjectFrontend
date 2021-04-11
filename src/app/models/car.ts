@@ -10,4 +10,5 @@ export interface Car{
     description:string
     imagePath:string
     carImageDate:Date
+    minFindex:number
 } 

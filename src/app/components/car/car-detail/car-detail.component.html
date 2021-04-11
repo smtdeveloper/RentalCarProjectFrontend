@@ -44,18 +44,22 @@
     </thead>
     <tbody>
       <tr *ngFor="let carImage of carImages" >
-        <td>  <h3> {{car.carId}} </h3> </td>
-        <td> <h3> {{car.modelName}} </h3> </td>
-        <td> <h3> {{car.brandName}} </h3> </td>
-        <td> <h3> {{car.colorName}} </h3> </td>
-        <td> <h3> {{car.modelYear}} </h3> </td>
-        <td> <h3>  {{car.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
-        <td> <h3>  {{car.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
-        <td> <h3>  {{car.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
-        <td> <button routerLink="/rentals/{{car.carId}}" (click)="addRental(car.carId)" 
+        <td>  <h3> {{car?.carId}} </h3> </td>
+        <td> <h3> {{car?.modelName}} </h3> </td>
+        <td> <h3> {{car?.brandName}} </h3> </td>
+        <td> <h3> {{car?.colorName}} </h3> </td>
+        <td> <h3> {{car?.modelYear}} </h3> </td>
+        <td> <h3>  {{car?.dailyPrice | vatAdded:18 | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <h3>  {{car?.dailyPrice | vatWeek:18  | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <h3>  {{car?.dailyPrice | vatMoon:18  | currency : "TRY":"" }} ₺ </h3></td>
+        <td> <button *ngIf="car.minFindex <= user.findexPoint " routerLink="/rentals/{{car.carId}}" (click)="addRental(car.carId)" 
           type="button" class="btn btn-outline-warning btn-lg position-relative">  
           <h2>  Kirala </h2>  </button> </td>
+          
       </tr>
+      <div *ngIf="car?.minFindex > user?.findexPoint " class="alert alert-primary" role="alert">
+        Findeks Puanınız ({{user?.findexPoint}}) Bu Araç İçin Yeterli Değil 
+      </div>
     </tbody>
   </table>
 </div>

@@ -7,6 +7,7 @@ import { CarImage } from 'src/app/models/carImage';
 import { Rental } from 'src/app/models/rental';
 import { CarService } from 'src/app/services/car.service';
 import { PaymentService } from 'src/app/services/payment.service';
+import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-payment',
@@ -37,7 +38,8 @@ export class PaymentComponent implements OnInit {
     private router:Router,
     private toastrService:ToastrService,
     private paymentService:PaymentService,
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private rentalService:RentalService
 
   ) { }
 

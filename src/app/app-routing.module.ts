@@ -28,9 +28,10 @@ const routes: Routes = [
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
   {path:"cars/detail/:carId",component:CarDetailComponent},
-  {path:"rentals/:carId" ,component:RentalAddComponent},
-  {path:"payments/:carId" , component:PaymentComponent},
-  {path:"rentals/add" , component:RentalAddComponent},
+  {path:"rentals/:carId" ,component:RentalAddComponent, canActivate:[LoginGuard]},
+  {path:"payments/:carId" , component:PaymentComponent, canActivate:[LoginGuard]},
+  {path:"rentals/add" , component:RentalAddComponent , canActivate:[LoginGuard]},
+  {path:"rentals",component:RentalComponent, canActivate:[LoginGuard]},
 
   {path:"cars/add" , component:CarAddComponent , canActivate:[LoginGuard]},
   {path:"cars/update" , component:CarUpdateComponent, canActivate:[LoginGuard] },
@@ -49,11 +50,11 @@ const routes: Routes = [
 
   {path:"login" , component:LoginComponent},
   {path:"register" , component:RegisterComponent},
-  {path:"payment" , component:PaymentComponent},
+  {path:"payment/:rental" , component:PaymentComponent},
   {path:"brands",component:BrandComponent},
   {path:"colors",component:ColorComponent},
   {path:"customers",component:CustomerComponent},
-  {path:"rentals",component:RentalComponent},
+
   
   {path:"cars/filter/:brandId/:colorId",component:CarComponent}
 

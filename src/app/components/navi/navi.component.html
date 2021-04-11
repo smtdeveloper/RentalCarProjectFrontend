@@ -36,26 +36,50 @@
     <div class="container-fluid ">
      
     
-
-      <form class="d-flex" *ngIf="checkIfLogin()==false">
-        <button   routerLink="/login"  class="btn btn-lg btn-success" type="button"> <h4> Giriş Yap </h4>   </button> 
-      </form>
-
-      <div class="dropdown" *ngIf="checkIfLogin()==true" >
-
-        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" 
-        data-bs-toggle="dropdown" aria-expanded="false">
-        
-         <h4> Samet Akca </h4> 
-         <!--   <h4>    {{this.authService.userName}} </h4  -->
+      <div>
+      <form class="d-flex" *ngIf="checkIfLogin()==false">>
+        <button class="btn btn-danger" routerLink="/register">Kayıt Ol</button>
+        <button class="btn btn-primary" type="submit" routerLink="/login">
+          Giriş Yap
         </button>
-       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item " routerLink="/profile/info"> <h4> Profil </h4>  </a></li>
-            <li><a  class="dropdown-item bg-danger text-white" routerLink="" (click)="logOut()"> <h4> Çıkış Yap </h4> </a></li>
-          </ul>
-      </div>
+  
+      </form>
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+        *ngIf="checkIfLogin()==true">
+      >
+        <li class="nav-item dropdown right">
+          <a
+            class="nav-link dropdown-toggle text-light"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+          <h3>  {{ user?.firstName }}
+            {{ user?.lastName }} (Findex : {{ user?.findexPoint }}) </h3>
+           
+          </a>
 
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <li class="colorl">
+              <a class="dropdown-item" routerLink="/profile"
+                ><i class="bi bi-person-circle"></i> <h3> Profil </h3> </a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item bg-danger text-white" (click)="logOut()"
+                ><i class="bi bi-power "></i> <h2> Çıkış Yap  </h2> </a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
       
+          </div>
   
 
       <a class="navbar-brand mx-5 " href="#">
