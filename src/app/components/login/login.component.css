@@ -11,8 +11,8 @@ body {
     max-width: 600px;
     min-height: 800px;
     position: relative;
-    background: url(https://image.freepik.com/free-photo/black-car-iced-road-surrounded-by-trees-covered-with-snow_181624-28773.jpg) no-repeat center;
-    box-shadow: 0 12px 15px 0 rgba(0, 110, 255, 0.747), 0 17px 50px 0 rgba(0, 0, 0, .19)
+    background: url(https://image.freepik.com/free-photo/black-sport-car-with-two-yellow-stripes-driving-road_114579-4070.jpg) no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 110, 255, 0.712), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
 .login-snip {
@@ -20,7 +20,7 @@ body {
     height: 100%;
     position: absolute;
     padding: 90px 80px 50px 70px;
-    background: rgba(16, 3, 90, 0.9)
+    background: rgba(14, 1, 85, 0.808)
 }
 
 .login-snip .login,

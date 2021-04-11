@@ -4,6 +4,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,10 @@ import { TokenModel } from '../models/tokenModel';
 export class AuthService {
 
   apiUrl = 'https://localhost:44379/api/auth/';
-  constructor(private httpClient:HttpClient) { }
+  constructor(
+    private httpClient:HttpClient,
+    private localStorageService:LocalStorageService
+    ) { }
 
   login(loginModel:LoginComponent){
 
@@ -30,6 +34,10 @@ export class AuthService {
     else{
       return false;
     }
+  }
+
+  logOut(){
+    this.localStorageService.clear()
   }
 
 }

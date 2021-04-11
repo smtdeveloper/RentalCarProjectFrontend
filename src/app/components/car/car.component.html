@@ -35,7 +35,7 @@
 
 *ngFor="let car of cars | filterPipe:filterText ">
 
-  <h2 style="background-color: #ffffff9f;" class="text-center" >Kiralık Araç</h2> 
+  <h2 style="background-color: #ffffff9f;" class="text-center"> Kiralık Araç </h2> 
   <div >  
   <img
             src="{{apiUrl+car.imagePath}}" 
@@ -53,8 +53,8 @@
    </ul>
 
    <h5 class="card-text text-primary text-center" >  {{car.description}}   </h5>
-   <div class="card-footer">
-    <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-warning   mt-2 my-2">  <h3> Detaylar</h3>  </a>
+   <div class="card-footer" style="background-color: #ffffff;">
+    <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-primary   mt-2 my-2">  <h3> Detaylar</h3>  </a>
   </div>
 </div>
 </div>
