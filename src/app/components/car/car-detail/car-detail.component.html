@@ -57,11 +57,12 @@
           <h2>  Kirala </h2>  </button> </td>
           
       </tr>
-      <div *ngIf="car?.minFindex > user?.findexPoint " class="alert alert-primary" role="alert">
-        Findeks Puanınız ({{user?.findexPoint}}) Bu Araç İçin Yeterli Değil 
-      </div>
+     
     </tbody>
   </table>
+  <div *ngIf="car?.minFindex > user?.findexPoint " class="alert alert-primary" role="alert">
+    <h2 class="text-dark text-center" >  Findeks Puanınız ({{user?.findexPoint}}) Bu Araç İçin Yeterli Değil  </h2> 
+  </div>
 </div>
 
 

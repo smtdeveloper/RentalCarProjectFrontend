@@ -38,9 +38,11 @@
     
       <div>
       <form class="d-flex" *ngIf="checkIfLogin()==false">>
-        <button class="btn btn-danger" routerLink="/register">Kayıt Ol</button>
         <button class="btn btn-primary" type="submit" routerLink="/login">
-          Giriş Yap
+         
+        </button>
+        <button class="btn btn-warning" type="submit" routerLink="/login">
+          <h3> Giriş Yap </h3> 
         </button>
   
       </form>

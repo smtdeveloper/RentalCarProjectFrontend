@@ -61,122 +61,135 @@
       </div>
     </div>
 
+    <div class="col  mx-5 " >
+      <br> <br> <br>
+                  <div  class="card mt-4">
+                    <div class="card-header text-center">
+                      <strong> <h1> İşlem Özeti </h1> </strong>
+                    </div>
+                    <div class="card-body">
+                      <table  class="table text-primary">
+                        <thead>
+                          <tr>
+                            <th> <h3> Alış Tarihi </h3>  </th>
+                            <th> <h3> Teslim Tarihi </h3>  </th>
+                            <th> <h3> Marka </h3> </th>
+                            <th> <h3>  Renk </h3> </th>
+                            
+                            <th> <h3> Günlük </h3> </th>
+                            <th> <h3> Toplam </h3> </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let car of carDetails">
+                            <td class="text-dark" > <h3> {{rental.rentDate}} </h3> </td>
+                            <td  class="text-dark" > <h3> {{rental.returnDate}} </h3> </td>
+                            <td  class="text-dark" > <h3> {{car.brandName}} </h3> </td>
+                            <td  class="text-dark" > <h3> {{car.colorName}} </h3> </td>
+                           
+                            <td  class="text-success" >  <h2> {{car.dailyPrice | currency:"₺"}} </h2> </td>
+                            <td><strong class="text-success"> <h2> {{car.dailyPrice * amountPayment | currency:"₺"}} </h2> </strong></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  
+                  </div>
+                  </div>
  
      
       <br>
       <br>
  
-      <div class="container">
-        <div class="row">
+    
+       
+<div class="row" > 
 
-          <div class="col-md-6">
-            <div class="card">
-                <div class="card-header"><h5 class="title"> <h2> Banka Bilgilerinizi Eksiksiz doldurun </h2></h5></div>
-                <div class="card-body">
-                    <form [formGroup]="cardAddForm">
+  <div class="col-md-3" > 
+
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+        <div class="card-header"><h5 class="title"> <h2> Banka Bilgilerinizi Eksiksiz doldurun </h2></h5></div>
+        <div class="card-body">
+            <form [formGroup]="cardAddForm">
 
 
-                      <div class="mb-3">
-                        <label for="customerId"><h3> Müsteri Numaranız</h3> </label>
-                        <div class="form-group">
-                            <input type="number" 
-                            id="customerId" 
-                            formControlName="customerId" class="form-control" 
-                            placeholder="Müsteri Numaranızı giriniz"/>
-                        </div>
-                    </div>
-    
-                        <div class="mb-3">
-                            <label for="cardOwnerName"><h3> İSİM </h3> </label>
-                            <div class="form-group">
-                                <input type="text" 
-                                id="cardOwnerName" 
-                                formControlName="cardOwnerName" class="form-control" 
-                                placeholder="Kart üzerindeki ismi giriniz"/>
-                            </div>
-                        </div>
-    
-                        <div class="mb-3">
-                            <label for="cardNumber"> <h3> Kart Numarası </h3> </label>
-                            <div class="form-group">
-                                <input type="text" 
-                                id="cardNumber" 
-                                formControlName="cardNumber" class="form-control" 
-                                placeholder="Kart Numarasını giriniz "/>
-                            </div>
-                        </div>
-                       
-                        <div class="mb-3">
-                            <label for="cardExpirationDate"> <h3> Son Kullanma Tarihi </h3> </label>
-                            <div class="form-group">
-                                <input type="text" 
-                                id="cardExpirationDate" 
-                                formControlName="cardExpirationDate" class="form-control" 
-                                placeholder="Son Kullanma Tarihini giriniz"/>
-                            </div>
-                        </div>
-    
-                       <div class="mb-3">
-                        <label for="cardCvv"> <h3> C V V </h3> </label>
-                        <div class="form-group">
-                            <input type="number" 
-                            id="cardCvv" 
-                            formControlName="cardCvv" class="form-control" 
-                            placeholder="Kartın arkasındaki 3 haneli rakam"/>
-                        </div>
-                       
-                       </div>
-                       <button type="button" (click)="creditPayment()" class="btn btn-lg btn-success btn-block">Ödeme Yap</button>
-                      
-                    </form>
-    
-                </div>
-                <div class="card-footer">
-                   
+              <div class="mb-3">
+                <label for="customerId"><h3> Müsteri Numaranız</h3> </label>
+                <div class="form-group">
+                    <input type="number" 
+                    id="customerId" 
+                    formControlName="customerId" class="form-control" 
+                    placeholder="Müsteri Numaranızı giriniz"/>
                 </div>
             </div>
-            
+
+                <div class="mb-3">
+                    <label for="cardOwnerName"><h3> İSİM </h3> </label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="cardOwnerName" 
+                        formControlName="cardOwnerName" class="form-control" 
+                        placeholder="Kart üzerindeki ismi giriniz"/>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cardNumber"> <h3> Kart Numarası </h3> </label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="cardNumber" 
+                        formControlName="cardNumber" class="form-control" 
+                        placeholder="Kart Numarasını giriniz "/>
+                    </div>
+                </div>
+               
+                <div class="mb-3">
+                    <label for="cardExpirationDate"> <h3> Son Kullanma Tarihi </h3> </label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="cardExpirationDate" 
+                        formControlName="cardExpirationDate" class="form-control" 
+                        placeholder="Son Kullanma Tarihini giriniz"/>
+                    </div>
+                </div>
+
+               <div class="mb-3">
+                <label for="cardCvv"> <h3> C V V </h3> </label>
+                <div class="form-group">
+                    <input type="number" 
+                    id="cardCvv" 
+                    formControlName="cardCvv" class="form-control" 
+                    placeholder="Kartın arkasındaki 3 haneli rakam"/>
+                </div>
+               
+               </div>
+               <button type="button" (click)="creditPayment()" class="btn btn-lg btn-success btn-block">Ödeme Yap</button>
+              
+            </form>
+
         </div>
+        <div class="card-footer">
+           
+        </div>
+    </div>
+    
+</div>
+
+
+  <div class="col-md-3" > 
+
+  </div>
+
+</div>
+         
         
 
-            <br> <br> 
-          <div class="col  mx-5 " >
-<br> <br> <br>
-            <div  class="card mt-4">
-              <div class="card-header text-center">
-                <strong> <h3> İşlem Özeti </h3> </strong>
-              </div>
-              <div class="card-body">
-                <table  class="table text-success">
-                  <thead>
-                    <tr>
-                      <th>Alış Tarihi </th>
-                      <th>Teslim Tarihi </th>
-                      <th>Marka</th>
-                      <th>Renk</th>
-                      
-                      <th>Günlük</th>
-                      <th>Toplam</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let car of carDetails">
-                      <td>{{rental.rentDate}}</td>
-                      <td>{{rental.returnDate}}</td>
-                      <td>{{car.brandName}}</td>
-                      <td>{{car.colorName}}</td>
-                     
-                      <td>{{car.dailyPrice | currency:"₺"}}</td>
-                      <td><strong class="text-danger">{{car.dailyPrice * amountPayment | currency:"₺"}}</strong></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            
-            </div>
-            </div>
-        </div>
-      </div>
+          
+  
+ 
   
   <br />
   <br />

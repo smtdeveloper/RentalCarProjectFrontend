@@ -79,7 +79,7 @@ export class PaymentComponent implements OnInit {
       let PaymentModel = Object.assign({},this.cardAddForm.value)
       this.paymentService.add(PaymentModel).subscribe(response =>{
         
-        this.toastrService.success(response.message,"Başarılı Eklendi")
+        this.toastrService.success(" Ödeme Başarılı ")
         
        
       }
