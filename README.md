@@ -2,6 +2,14 @@
 Rental Car Project - Samet Akca / @SMTcoder  <br>
  YouTube Videosu :    https://www.youtube.com/watch?v=_xrnKaRDrEA
 
+Kullanılan Teknolojiler (Front-End) :
+Paketler :
+• TypScript • Angular 11.2.5 • Angular CLI 11.2.4 • Bootstrap 5.0.0-beta2 • JQuery 3.6.0 • Toastr 2.1.4 • @auth0/angular-jwt (Decode Token) 5.0.2 • bootswatch 4.6.0 • font-awesome 4.7.0
+
+Teknikler :
+• Custom Form Control • Custom Pipe • Custom Directive • QueryParams • Guards • LocalStorage Service
+
+Görseller
 
 ![bandicam 2021-04-11 23-40-44-659](https://user-images.githubusercontent.com/74311713/114325781-882d2300-9b3a-11eb-897a-412dc88e3d32.jpg)
 ![01](https://user-images.githubusercontent.com/74311713/114325802-99762f80-9b3a-11eb-98be-2536cbd0d47a.png)![bandicam 2021-04-11 23-39-35-397](https://user-images.githubusercontent.com/74311713/114325818-a8f57880-9b3a-11eb-8ba7-9b1bf1652151.jpg)
